@@ -21,25 +21,27 @@ module.exports = {
     // alias: {
     //   'oroui/js/app/component/main': 'orocustom/js/app/component/ui-main'
     // }
+    plugins: [
+      new MapModulesPlugin({
+        '*': {
+          'oroui/js/app/component/main': 'orocustom/js/app/component/ui-main',
+        },
+        'bundles/orocustom/js/app/component/ui-main.js': {
+          'oroui/js/app/component/main': 'oroui/js/app/component/main',
+        },
+        'bundles/oroui/js/app/component/main.js': {
+          'oroui/js/app/views/span-with-text': 'orocustom/js/app/views/span-with-text',
+        },
+        'bundles/orofilters/js/app/component/test.js': {
+          'oroui/js/app/views/span-with-text': 'orocustom/js/app/views/red-text',
+        }
+      })
+    ]
   },
   devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['**/*', '!modules.js'],
-    }),
-    new MapModulesPlugin({
-      '*': {
-        'oroui/js/app/component/main': 'orocustom/js/app/component/ui-main',
-      },
-      'bundles/orocustom/js/app/component/ui-main.js': {
-        'oroui/js/app/component/main': 'oroui/js/app/component/main'
-      },
-      'bundles/oroui/js/app/component/main.js': {
-        'oroui/js/app/views/span-with-text': 'orocustom/js/app/views/span-with-text'
-      },
-      'bundles/orofilters/js/app/component/test.js': {
-        'oroui/js/app/views/span-with-text': 'orocustom/js/app/views/red-text'
-      }
     })
   ],
   output: {
