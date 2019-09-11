@@ -18,9 +18,10 @@ module.exports = {
       bundlesDir,
       jsDir,
     ],
-    // alias: {
-    //   'oroui/js/app/component/main': 'orocustom/js/app/component/ui-main'
-    // }
+    alias: {
+      'config$': 'oroui/js/app/services/config-modules',
+      // 'oroui/js/app/component/main': 'orocustom/js/app/component/ui-main'
+    },
     plugins: [
       new MapModulesPlugin({
         '*': {
@@ -41,7 +42,7 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/*', '!modules.js'],
+      cleanOnceBeforeBuildPatterns: ['**/*', '!modules.js', '!configs.json'],
     })
   ],
   output: {

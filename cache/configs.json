@@ -1,0 +1,20 @@
+{
+  "orocustom/js/app/component/main": {
+    "test": 1
+  },
+  "orocustom/js/app/component/test": {
+    "test": 2
+  },
+  "orofilters/js/app/component/main": {
+    "test": 3
+  },
+  "orofilters/js/app/component/test": {
+    "test": 4
+  },
+  "oroui/js/app/component/main": {
+    "test": 5
+  },
+  "oroui/js/app/component/test": {
+    "test": 6
+  }
+}
