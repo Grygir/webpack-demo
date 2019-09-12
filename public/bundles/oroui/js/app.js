@@ -1,5 +1,10 @@
 import getModule from 'oroui/js/app/services/dynamic-modules';
 import filterTypeToModuleMap from 'orofilters/js/type-to-module-map';
+import 'app-modules';
+
+import config from 'config';
+console.log(module.id, config(module.id));
+
 
 const getFilterType = () => {
   const types = ['boolean', 'choice', 'number', 'string'];

@@ -5,6 +5,22 @@
     <title>Output Management</title>
   </head>
   <body>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script data-role="config" type="application/json">
+      {
+        "oroui\/js\/app": {
+          "baseUrl": "http:\/\/b2b-crm-ee.dev4.ll",
+          "headerId": "x-oro-hash-navigation",
+          "userName": "admin",
+          "root": "\/",
+          "startRouteName": "oro_user_profile_view",
+          "debug": false,
+          "skipRouting": "[data-nohash=true], .no-hash",
+          "controllerPath": "controllers\/",
+          "controllerSuffix": "-controller",
+          "trailing": null
+        }
+      }
+    </script>
+    <script src="js/app.js" type="text/javascript"></script>
   </body>
 </html>

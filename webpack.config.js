@@ -42,7 +42,7 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/*', '!modules.js', '!configs.json'],
+      cleanOnceBeforeBuildPatterns: ['**/*', '!app-modules.js', '!modules.js', '!configs.json'],
     })
   ],
   output: {
