@@ -1,7 +1,8 @@
 import getModule from 'oroui/js/app/services/dynamic-modules';
 import filterTypeToModuleMap from 'orofilters/js/type-to-module-map';
 import 'app-modules';
-
+import template from 'tpl-loader!oroui/templates/test.html';
+console.log(template({test: 4}));
 import config from 'config';
 console.log(module.id, config(module.id));
 

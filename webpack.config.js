@@ -62,6 +62,12 @@ module.exports = {
       }
     }
   },
+  resolveLoader: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules'
+    ]
+  },
   module: {
     rules: [
       {
