@@ -1,0 +1,14 @@
+{
+  "*": {
+    "oroui/js/app/component/main": "orocustom/js/app/component/ui-main"
+  },
+  "orocustom/js/app/component/ui-main": {
+    "oroui/js/app/component/main": "oroui/js/app/component/main"
+  },
+  "oroui/js/app/component/main": {
+    "oroui/js/app/views/span-with-text": "orocustom/js/app/views/span-with-text"
+  },
+  "orofilter/js/app/component/test": {
+    "oroui/js/app/views/span-with-text": "orocustom/js/app/views/red-text"
+  }
+}

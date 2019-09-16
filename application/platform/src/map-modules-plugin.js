@@ -15,7 +15,7 @@ class MapModulesPlugin {
       if (!innerRequest || !issuer) {
         return callback();
       }
-      const mapKey = customMapKeys.find(name => issuer.slice(-name.length) === name);
+      const mapKey = customMapKeys.find(name => issuer === name);
       const map = mapKey ? customMap[mapKey] : generalMap || {};
 
       for (const [name, alias] of Object.entries(map)) {
