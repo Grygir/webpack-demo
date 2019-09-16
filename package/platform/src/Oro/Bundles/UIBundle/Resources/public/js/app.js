@@ -1,5 +1,5 @@
 import getModule from 'oroui/js/app/services/dynamic-modules';
-import filterTypeToModuleMap from 'orofilters/js/type-to-module-map';
+import filterTypeToModuleMap from 'orofilter/js/type-to-module-map';
 import 'app-modules';
 import template from 'tpl-loader!oroui/templates/test.html';
 console.log(template({test: 4}));
@@ -30,8 +30,8 @@ document.body.appendChild(document.createElement('hr'));
 const components = [
   'orocustom/js/app/component/main',
   'orocustom/js/app/component/test',
-  'orofilters/js/app/component/main',
-  'orofilters/js/app/component/test',
+  'orofilter/js/app/component/main',
+  'orofilter/js/app/component/test',
   'oroui/js/app/component/main',
   'oroui/js/app/component/test',
 ];

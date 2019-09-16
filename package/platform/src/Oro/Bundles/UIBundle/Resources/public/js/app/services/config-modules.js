@@ -4,12 +4,13 @@ let config;
 const moduleNameMask = /^\.\/public\/bundles\/([\w\W]+)\.js$/;
 
 export default (moduleId) => {
-  if (!config) {
-    config = mergeConfig({}, staticConfig);
-    config = mergeConfig(config, fetchConfigExtends());
-  }
-  let moduleName = fetchModuleName(moduleId);
-  return config[moduleName];
+  // if (!config) {
+  //   config = mergeConfig({}, staticConfig);
+  //   config = mergeConfig(config, fetchConfigExtends());
+  // }
+  // let moduleName = fetchModuleName(moduleId);
+  // return config[moduleName];
+  return {};
 };
 
 /**
