@@ -20,7 +20,7 @@ const resolverConfig = {
   }
 };
 
-const simpleResolver = (resolver => {
+const resolver = (resolver => {
   return moduleName => resolver({}, '', moduleName, {});
 })(resolve.create.sync({ ...resolverConfig }));
 
@@ -34,7 +34,7 @@ module.exports = {
   resolve: {
     ...resolverConfig,
     plugins: [
-      new MapModulesPlugin(prepareModulesMap(simpleResolver, mapConfig))
+      new MapModulesPlugin(prepareModulesMap(resolver, mapConfig))
     ]
   },
   devtool: 'inline-source-map',
@@ -77,6 +77,14 @@ module.exports = {
       {
         test: /\.bundle\.js$/,
         use: 'bundle-loader',
+      },
+      {
+        test: /\/configs\.json$/,
+        loader: 'config-loader',
+        options: {
+          resolver,
+          relativeTo: __dirname,
+        }
       }
     ]
   }

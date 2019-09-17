@@ -5,10 +5,10 @@
   "orocustom/js/app/component/test": {
     "test": 2
   },
-  "orofilters/js/app/component/main": {
+  "orofilter/js/app/component/main": {
     "test": 3
   },
-  "orofilters/js/app/component/test": {
+  "orofilter/js/app/component/test": {
     "test": 4
   },
   "oroui/js/app/component/main": {
@@ -16,5 +16,6 @@
   },
   "oroui/js/app/component/test": {
     "test": 6
-  }
+  },
+  "oroui/js/app": {}
 }

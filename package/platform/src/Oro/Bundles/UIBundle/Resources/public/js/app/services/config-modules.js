@@ -1,17 +1,31 @@
 import staticConfig from 'configs.json';
 
 let config;
-const moduleNameMask = /^\.\/public\/bundles\/([\w\W]+)\.js$/;
 
 export default (moduleId) => {
-  // if (!config) {
-  //   config = mergeConfig({}, staticConfig);
-  //   config = mergeConfig(config, fetchConfigExtends());
-  // }
-  // let moduleName = fetchModuleName(moduleId);
-  // return config[moduleName];
-  return {};
+  if (!config) {
+    config = combineConfig();
+  }
+  return config[moduleId];
 };
+
+/**
+ * Combines config by from statically defined part and
+ * config extends defined within page HTML
+ *
+ * @return {Object}
+ */
+function combineConfig() {
+  const config = mergeConfig({}, staticConfig);
+  // makes temp config mep where keys are module names but values are same config options
+  const tempConfig = Object.fromEntries(Object.values(config).map(moduleConfig => {
+    const { __moduleName: moduleName } = moduleConfig;
+    delete moduleConfig.__moduleName;
+    return [moduleName, moduleConfig];
+  }));
+  mergeConfig(tempConfig, fetchConfigExtends());
+  return config;
+}
 
 /**
  * Merges objects recursively,
@@ -61,18 +75,4 @@ function fetchConfigExtends() {
   });
 
   return configExtends;
-}
-
-/**
- * Converts moduleId to moduleName
- *
- * @param moduleId
- * @return {string | *}
- */
-function fetchModuleName(moduleId) {
-  let matches = moduleId.match(moduleNameMask);
-  if (!matches) {
-    console.warn(`Can\'t fetch module name from the module id "${moduleId}"`);
-  }
-  return matches[1];
 }

@@ -1,9 +1,8 @@
-module.exports = (simpleResolver, mapConfig) => {
+module.exports = (resolver, mapConfig) => {
   const { '*': generalMap, ...customMap } = mapConfig;
 
   return {
     '*': generalMap || {},
-    ...Object.fromEntries(Object.entries(customMap)
-      .map(([moduleName, map]) => [simpleResolver(moduleName),map]))
+    ...Object.fromEntries(Object.entries(customMap).map(([moduleName, map]) => [resolver(moduleName),map]))
   };
 };
