@@ -25,6 +25,6 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   }
 }
